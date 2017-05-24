@@ -88,7 +88,7 @@ describe('Codebases Add Component', () => {
     fixture = TestBed.createComponent(CodebasesAddComponent);
   });
 
-  xit('Init component succesfully', async(() => {
+  it('Init component succesfully', async(() => {
     // given
     const comp = fixture.componentInstance;
     const debug = fixture.debugElement;
@@ -102,7 +102,7 @@ describe('Codebases Add Component', () => {
     });
   }));
 
-xit('Display github repo details after sync button pressed', async(() => {
+it('Display github repo details after sync button pressed', async(() => {
     // given
     gitHubServiceMock.getRepoDetailsByFullName.and.returnValue(Observable.of(expectedGitHubRepoDetails));
     gitHubServiceMock.getRepoLicenseByUrl.and.returnValue(Observable.of(expectedGitHubRepoLicense));
@@ -150,7 +150,7 @@ xit('Display github repo details after sync button pressed', async(() => {
     });
   }));
 
-  xit('Add codebase to space', async(() => {
+  it('Add codebase to space', async(() => {
     // given
     gitHubServiceMock.getRepoDetailsByFullName.and.returnValue(Observable.of(expectedGitHubRepoDetails));
     gitHubServiceMock.getRepoLicenseByUrl.and.returnValue(Observable.of(expectedGitHubRepoLicense));
