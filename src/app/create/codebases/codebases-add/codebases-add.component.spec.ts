@@ -126,7 +126,7 @@ it('Display github repo details after sync button pressed', async(() => {
     });
   }));
 
-  xit('Display error after sync button pressed with invalid gitname', async(() => {
+  it('Display error after sync button pressed with invalid gitname', async(() => {
     // given
     gitHubServiceMock.getRepoDetailsByFullName.and.returnValue(Observable.of(expectedGitHubRepoDetails));
     gitHubServiceMock.getRepoLicenseByUrl.and.returnValue(Observable.of(expectedGitHubRepoLicense));
