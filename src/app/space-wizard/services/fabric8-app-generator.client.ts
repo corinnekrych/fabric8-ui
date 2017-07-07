@@ -537,8 +537,12 @@ export class Fabric8AppGeneratorClient {
       let resultDisplay = cloneDeep(this.result);
       for (let key in resultDisplay.gitRepositoryNames) {
         if (this.result.gitOwnerName) {
+          if (!resultDisplay.jenkinsJobUrl) {
+            resultDisplay.jenkinsJobUrl = [];
+          }
+          resultDisplay.jenkinsJobUrl[key] = `${resultDisplay.organisationJenkinsJobUrl}/job/${resultDisplay.gitRepositoryNames[key]}`;
           resultDisplay.gitRepositoryNames[key] = `https://github.com/${resultDisplay.gitOwnerName}/${resultDisplay.gitRepositoryNames[key]}.git`;
-        }
+          }
       }
       let msg = this.formatForDisplay(resultDisplay);
       this.displaySuccessMessageView(`A starter application was created.`, msg);
