@@ -25,7 +25,7 @@ import { MomentModule }       from 'angular2-moment';
 import { PlannerModule }      from 'fabric8-planner';
 import { RouterModule }       from '@angular/router';
 // import { ModalModule } from 'ngx-modal';
-import { ModalModule} from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import {
   // Base functionality for the runtime console
   KubernetesStoreModule,
@@ -80,8 +80,8 @@ import { AppState, InternalStateType } from './app.service';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { MenusService }    from './layout/header/menus.service';
-import { ExpFeaturePageComponent } from './exp-feature-page/exp-feature-page.component';
-import { ExpFeatureBannerComponent } from './exp-feature-page/exp-feature-banner.component';
+import { FeatureWarningPageComponent } from './feature-flag/warning-page/feature-warning-page.component';
+import { FeatureBannerComponent } from './feature-flag/banner/feature-banner.component';
 
 // Shared Services
 import { AboutService }                  from './shared/about.service';
@@ -96,7 +96,7 @@ import { ContextService }                from './shared/context.service';
 import { ContextCurrentUserGuard }       from './shared/context-current-user-guard.service';
 import { ContextResolver }               from './shared/context-resolver.service';
 import { DummyService }                  from './shared/dummy.service';
-import { ExperimentalFeatureResolver }   from './shared/experimental-feature.resolver';
+import { FeatureFlagResolver }   from './feature-flag/resolver/feature-flag.resolver';
 import { Fabric8UIHttpService }          from './shared/fabric8-ui-http.service';
 import { forgeApiUrlProvider }           from './shared/forge-api.provider';
 import { LoginService }                  from './shared/login.service';
@@ -127,6 +127,9 @@ import { Fabric8UISpaceNamespace } from './shared/runtime-console/fabric8-ui-spa
 import { GettingStartedService } from './getting-started/services/getting-started.service';
 import { ForgeWizardModule } from './space/forge-wizard/forge-wizard.module';
 import { ProviderService } from './shared/account/provider.service';
+import { FeatureTogglesService } from './feature-flag/service/feature-toggles.service';
+import { featureTogglesApiUrlProvider } from '../a-runtime-console/shared/feature-toggles.provider';
+
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -181,8 +184,8 @@ export type StoreType = {
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    ExpFeaturePageComponent,
-    ExpFeatureBannerComponent
+    FeatureWarningPageComponent,
+    FeatureBannerComponent
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     // Broadcaster must come first
@@ -211,7 +214,9 @@ export type StoreType = {
     },
     DummyService,
     ErrorService,
-    ExperimentalFeatureResolver,
+    FeatureFlagResolver,
+    FeatureTogglesService,
+    featureTogglesApiUrlProvider,
     Fabric8RuntimeConsoleResolver,
     Fabric8RuntimeConsoleService,
     {

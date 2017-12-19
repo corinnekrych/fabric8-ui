@@ -33,6 +33,7 @@ import { ProviderService } from './shared/account/provider.service';
 export class AppComponent {
   public experimentalFeatureEnabled: boolean;
   public isExperimentalFeature: boolean;
+  public featureEnablementLevel: string;
   public disconnectedStateConfig: EmptyStateConfig;
   private lastPageToTryGitHub: string;
   @ViewChild('connectToGithubModal') connectToGithubModal: TemplateRef<any>;
@@ -68,9 +69,10 @@ export class AppComponent {
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
-        //reset all experimental feature flag properties
+        // reset all experimental feature flag properties
         this.experimentalFeatureEnabled = false;
         this.isExperimentalFeature = false;
+        this.featureEnablementLevel = '';
         while (route.firstChild) route = route.firstChild;
         return route;
       })
@@ -91,6 +93,7 @@ export class AppComponent {
           let featureFlagConfig = event['featureFlagConfig'] as FeatureFlagConfig || featureFlagsInTree;
           this.experimentalFeatureEnabled = featureFlagConfig.enabled;
           this.isExperimentalFeature = true;
+          this.featureEnablementLevel = featureFlagConfig.showBanner;
         }
         let title = event['title'] ? `${event['title']} - ${this.brandingService.name}` : this.brandingService.name;
         this.titleService.setTitle(title);

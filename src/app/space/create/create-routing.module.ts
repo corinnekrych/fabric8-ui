@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateComponent } from './create.component';
 import { CodebasesComponent } from './codebases/codebases.component';
-import { ExperimentalFeatureResolver } from '../../shared/experimental-feature.resolver';
+import { FeatureFlagResolver } from '../../feature-flag/resolver/feature-flag.resolver';
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
         path: 'environments',
         loadChildren: './environments/create-environments.module#CreateEnvironmentsModule',
         resolve: {
-          featureFlagConfig: ExperimentalFeatureResolver
+          featureFlagConfig: FeatureFlagResolver
         },
         data: {
           title: 'Environments',
@@ -32,7 +32,7 @@ const routes: Routes = [
         path: 'apps',
         loadChildren: './apps/create-apps.module#CreateAppsModule',
         resolve: {
-          featureFlagConfig: ExperimentalFeatureResolver
+          featureFlagConfig: FeatureFlagResolver
         },
         data: {
           title: 'Applications',
@@ -43,7 +43,7 @@ const routes: Routes = [
         path: 'deployments',
         loadChildren: './deployments/deployments.module#DeploymentsModule',
         resolve: {
-          featureFlagConfig: ExperimentalFeatureResolver
+          featureFlagConfig: FeatureFlagResolver
         },
         data: {
           title: 'Deployments',

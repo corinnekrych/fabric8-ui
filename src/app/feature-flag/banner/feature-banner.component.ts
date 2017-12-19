@@ -1,29 +1,31 @@
 import {
   Component,
   OnInit,
-  OnDestroy
+  OnDestroy, Input
 } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
-import { UserService, User, AuthenticationService } from 'ngx-login-client';
+import { UserService, AuthenticationService } from 'ngx-login-client';
 
 @Component({
-  selector: 'f8-exp-feature-banner',
-  templateUrl: './exp-feature-banner.component.html'
+  selector: 'feature-banner',
+  templateUrl: './feature-banner.component.html',
+  styleUrls: ['./feature-banner.component.less']
 })
-export class ExpFeatureBannerComponent implements OnInit, OnDestroy {
+export class FeatureBannerComponent implements OnInit, OnDestroy {
 
   public hideBanner: boolean;
   public profileLink: string;
   private userSubscription: Subscription;
+  @Input() level: string;
 
   constructor(public router: Router,
               userService: UserService,
               authService: AuthenticationService) {
 
-    if(authService.isLoggedIn()) {
+    if (authService.isLoggedIn()) {
       this.userSubscription = userService.loggedInUser.subscribe(val => {
         if (val.id) {
           this.profileLink = '/' + val.attributes.username + '/_update';

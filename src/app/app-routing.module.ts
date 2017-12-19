@@ -3,11 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { trimEnd } from 'lodash';
 
-import { LoginComponent } from './login/login.component';
-import { SigninComponent } from './signin/signin.component';
 import { ContextResolver } from './shared/context-resolver.service';
-import { ExperimentalFeatureGuard } from './shared/experimental-feature.guard';
-import { ExperimentalFeatureResolver } from './shared/experimental-feature.resolver';
+import { FeatureFlagResolver } from './feature-flag/resolver/feature-flag.resolver';
 import { ProfileResolver } from './shared/profile-resolver.service';
 
 
@@ -90,7 +87,7 @@ export const routes: Routes = [
     path: ':entity/:space/plan',
     resolve: {
       context: ContextResolver,
-      featureFlagConfig: ExperimentalFeatureResolver
+      featureFlagConfig: FeatureFlagResolver
     },
     loadChildren: './space/plan/plan.module#PlanModule',
     data: {
@@ -104,7 +101,7 @@ export const routes: Routes = [
     path: ':entity/:space/plan/board',
     resolve: {
       context: ContextResolver,
-      featureFlagConfig: ExperimentalFeatureResolver
+      featureFlagConfig: FeatureFlagResolver
     },
     loadChildren: './space/plan/board/board.module#BoardModule',
     data: {
@@ -118,7 +115,7 @@ export const routes: Routes = [
     path: ':entity/:space/plan/detail',
     resolve: {
       context: ContextResolver,
-      featureFlagConfig: ExperimentalFeatureResolver
+      featureFlagConfig: FeatureFlagResolver
     },
     loadChildren: './space/plan/detail/detail.module#DetailModule',
     data: {
