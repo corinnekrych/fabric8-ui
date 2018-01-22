@@ -28,6 +28,7 @@ export class AnalyzeOverviewComponent implements OnInit, OnDestroy {
     private authentication: AuthenticationService,
     private contexts: Contexts
   ) {
+    console.log('>>>>>>>>>>>>loaded');
     this.selectedFlow = 'selectFlow';
   }
   ngOnInit() {

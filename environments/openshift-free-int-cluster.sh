@@ -44,7 +44,7 @@ if [ -z "${FABRIC8_PIPELINES_NAMESPACE}" ]; then
 fi
 
 # this URL is used in dev mode only, for now feature-toggles.service.ts used WITH url as a proxy
-# export FABRIC8_FEATURE_TOGGLES_API_URL=http://localhost:8080/api/
+export FABRIC8_FEATURE_TOGGLES_API_URL=http://localhost:8080/api/
 
 echo "Configured to connect to kubernetes cluster at https://${PROXIED_K8S_API_SERVER}/"
 
@@ -59,5 +59,5 @@ echo "OAUTH_AUTHORIZE_URI            ${OAUTH_AUTHORIZE_URI}"
 echo "OAUTH_LOGOUT_URI               ${OAUTH_LOGOUT_URI}"
 echo "FABRIC8_PIPELINES_NAMESPACE    ${FABRIC8_PIPELINES_NAMESPACE}"
 echo "OPENSHIFT_CONSOLE_URL          ${OPENSHIFT_CONSOLE_URL}"
-# echo "FABRIC8_FEATURE_TOGGLES_API_URL          ${FABRIC8_FEATURE_TOGGLES_API_URL}"
+echo "FABRIC8_FEATURE_TOGGLES_API_URL          ${FABRIC8_FEATURE_TOGGLES_API_URL}"
 echo ""

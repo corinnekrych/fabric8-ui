@@ -12,8 +12,10 @@ import { CreateWorkItemWidgetModule } from '../../../dashboard-widgets/create-wo
 import { EditSpaceDescriptionWidgetModule } from '../../../dashboard-widgets/edit-space-description-widget/edit-space-description-widget.module';
 import { EnvironmentWidgetModule } from '../../../dashboard-widgets/environment-widget/environment-widget.module';
 import { PipelinesWidgetModule } from '../../../dashboard-widgets/pipelines-widget/pipelines-widget.module';
+import { FeatureToggleComponent } from '../../../feature-flag/feature-wrapper/feature-toggle.component';
 import { AnalyzeOverviewRoutingModule } from './analyze-overview-routing.module';
 import { AnalyzeOverviewComponent } from './analyze-overview.component';
+
 
 @NgModule({
   imports: [
@@ -29,7 +31,7 @@ import { AnalyzeOverviewComponent } from './analyze-overview.component';
     ForgeWizardModule,
     ModalModule.forRoot()
   ],
-  declarations: [AnalyzeOverviewComponent]
+  declarations: [AnalyzeOverviewComponent, FeatureToggleComponent]
 })
 export class AnalyzeOverviewModule {
   constructor(http: Http) { }

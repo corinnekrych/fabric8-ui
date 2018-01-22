@@ -4,7 +4,9 @@
       <fabric8-edit-space-description-widget></fabric8-edit-space-description-widget>
     </div>
     <div class="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-0">
-      <button *ngIf="this.authentication.isLoggedIn()" id="analyze-overview-add-to-space-button" class="btn btn-primary btn-lg pull-right" (click)="openForgeWizard(addSpace)">Add to space</button>
+      <f8-feature-toggle featureName="Wizard">
+        <button *ngIf="this.authentication.isLoggedIn()" id="analyze-overview-add-to-space-button" class="btn btn-primary btn-lg pull-right" (click)="openForgeWizard(addSpace)">Add to space</button>
+      </f8-feature-toggle>
     </div>
   </div>
   <div class="cards-pf">
