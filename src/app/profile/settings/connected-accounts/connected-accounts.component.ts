@@ -76,12 +76,8 @@ export class ConnectedAccountsComponent implements OnDestroy, OnInit {
     this.providerService.linkOpenShift(this.cluster, window.location.href);
   }
 
-  public refreshGitHub(): void {
-    // call linking api again to reconnect if a connection doesn't exist
+  public refreshServices(): void {
     this.connectGitHub();
-  }
-
-  public refreshOpenShift(): void {
     this.providerService.disconnectOpenShift(this.cluster).subscribe(() => {
       this.connectOpenShift();
     });
