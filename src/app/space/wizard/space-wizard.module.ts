@@ -18,14 +18,7 @@ import { SpaceWizardComponent } from './space-wizard.component';
   imports: [
     CommonModule,
     FormsModule,
-    Fabric8WitModule,
-    StoreModule.forFeature('fabric8-ui', {
-      currentSpace: SpaceReducer
-
-    }, {
-      initialState: {currentSpace: initialSpaceState }
-    }),
-    EffectsModule.forFeature([SpaceEffects])
+    Fabric8WitModule
   ],
   declarations: [
     SpaceWizardComponent,
