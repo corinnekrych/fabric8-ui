@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    // throw new Error(); // kill the whole app
     this._loggedInUserSubscription = this.userService.loggedInUser.subscribe(val => this.loggedInUser = val);
     this._contextSubscription = this.contexts.current.subscribe(val => {
       this._context = val;

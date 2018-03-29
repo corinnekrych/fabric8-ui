@@ -110,10 +110,19 @@ import { AddSpaceOverlayModule } from './space/add-space-overlay/add-space-overl
 // About Modal
 import { AboutModalModule } from './layout/about-modal/about-modal.module';
 
+import { Observable } from 'rxjs/Rx';
 import { GettingStartedService } from './getting-started/services/getting-started.service';
 import { RavenExceptionHandler } from './shared/exception.handler';
+import { DeploymentStatusService } from './space/create/deployments/services/deployment-status.service';
+import {
+  DeploymentsService, TIMER_TOKEN,
+  TIMESERIES_SAMPLES_TOKEN
+} from './space/create/deployments/services/deployments.service';
 import { ForgeWizardModule } from './space/forge-wizard/forge-wizard.module';
 
+const DEPLOYMENTS_SERVICE_POLL_TIMER = Observable
+  .timer(DeploymentsService.INITIAL_UPDATE_DELAY, DeploymentsService.POLL_RATE_MS)
+  .share();
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -198,6 +207,10 @@ export type StoreType = {
       useExisting: ContextService
     },
     DummyService,
+    DeploymentStatusService,
+    { provide: TIMER_TOKEN, useValue: DEPLOYMENTS_SERVICE_POLL_TIMER },
+    { provide: TIMESERIES_SAMPLES_TOKEN, useValue: 15 },
+    DeploymentsService,
     {
       provide: ErrorHandler,
       useClass: RavenExceptionHandler

@@ -14,7 +14,7 @@ import { Navigation } from '../models/navigation';
 import { ContextService } from './context.service';
 
 @Injectable()
-export class ContextResolver implements Resolve<Context> {
+export class ContextResolver implements Resolve<Context | {}> {
 
   private _lastRoute: string;
 
@@ -33,7 +33,7 @@ export class ContextResolver implements Resolve<Context> {
       .subscribe(val => this._lastRoute = val);
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Context> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Context | {}> {
     // Resolve the context
     return this.contextService
       .changeContext(Observable.of({
@@ -43,7 +43,7 @@ export class ContextResolver implements Resolve<Context> {
       } as Navigation)).first()
       .catch((err: any, caught: Observable<Context>) => {
         console.log(`Caught in resolver ${err}`);
-        return Observable.throw(err);
+        return Observable.empty();
       });
   }
 

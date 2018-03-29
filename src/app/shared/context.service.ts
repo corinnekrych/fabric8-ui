@@ -201,7 +201,7 @@ export class ContextService implements Contexts {
     return contextList;
   }
 
-  changeContext(navigation: Observable<Navigation>): Observable<Context> {
+  changeContext(navigation: Observable<Navigation>): Observable<Context | {}> {
     let res = navigation
       // Process the navigation only if it is safe
       .filter(val => {
@@ -238,8 +238,9 @@ export class ContextService implements Contexts {
               } as Notification);
               console.log(`Space with name ${val.space} and owner ${val.user}
                 from path ${val.url} was not found because of ${err}`);
-              return Observable.throw(`Space with name ${val.space} and owner ${val.user}
-                from path ${val.url} was not found because of ${err}`);
+              return Observable.empty();
+              //return Observable.throw(`Space with name ${val.space} and owner ${val.user}
+              //  from path ${val.url} was not found because of ${err}`);
 
             });
         } else {
@@ -255,7 +256,8 @@ export class ContextService implements Contexts {
                 type: NotificationType.WARNING
               } as Notification);
               console.log(`Owner ${val.user} from path ${val.url} was not found because of ${err}`);
-              return Observable.throw(`Owner ${val.user} from path ${val.url} was not found because of ${err}`);
+              return Observable.empty();
+              //return Observable.throw(`Owner ${val.user} from path ${val.url} was not found because of ${err}`);
             });
         }
       })
@@ -268,14 +270,14 @@ export class ContextService implements Contexts {
             'Environments',
             'Planner'
           ]).map(features => {
-          val.user.features = features;
+          (val as RawContext).user.features = features;
           return val;
         }).catch(err => {
           return Observable.of(val);
         });
       })
       // Use a map to convert from a navigation url to a context
-      .map(val => this.buildContext(val))
+      .map(val => this.buildContext(val as RawContext))
       .distinctUntilKeyChanged('path')
       // Broadcast the spaceChanged event
       // Ensure the menus are built
@@ -302,6 +304,7 @@ export class ContextService implements Contexts {
       .do(val => {
         this._current.next(val);
       })
+      .catch(() => Observable.empty())
       .multicast(() => new Subject());
     res.connect();
     return res;

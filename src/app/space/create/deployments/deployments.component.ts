@@ -10,11 +10,7 @@ import { DeploymentsService } from './services/deployments.service';
   encapsulation: ViewEncapsulation.None,
   selector: 'alm-apps',
   templateUrl: 'deployments.component.html',
-  styleUrls: ['./deployments.component.less'],
-  providers: [
-    DeploymentStatusService,
-    DeploymentsService
-  ]
+  styleUrls: ['./deployments.component.less']
 })
 export class DeploymentsComponent implements OnDestroy, OnInit {
 

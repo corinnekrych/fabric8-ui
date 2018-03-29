@@ -32,6 +32,7 @@ export class FeatureTogglesService {
       this.headers.set('Authorization', 'Bearer ' + this.auth.getToken());
     }
     this.featureTogglesUrl = apiUrl;
+    // throw new Error(); fail at runtime start-up
   }
 
   /**
