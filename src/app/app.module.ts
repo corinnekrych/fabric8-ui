@@ -2,7 +2,6 @@ import { ApplicationRef, ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import './rxjs-extensions';
@@ -138,7 +137,6 @@ export type StoreType = {
     ActionModule,
     AddAppOverlayModule,
     AddSpaceOverlayModule,
-    BrowserAnimationsModule,
     BrowserModule,
     BsDropdownModule.forRoot(),
     EffectsModule.forRoot([]),

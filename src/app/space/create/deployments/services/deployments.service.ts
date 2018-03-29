@@ -222,6 +222,7 @@ export class DeploymentsService implements OnDestroy {
       this.headers.set('Authorization', `Bearer ${this.auth.getToken()}`);
     }
     this.apiUrl = witUrl + 'deployments/spaces/';
+    throw new Error();
   }
 
   ngOnDestroy(): void {
