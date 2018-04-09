@@ -1,14 +1,22 @@
+@import (reference) '../../../assets/stylesheets/shared/osio.less';
+
+.active-link {
+  border-bottom: 3px solid @color-pf-blue;
+  padding-bottom: 9px;
+  text-decoration: none;
+  color: #0088ce !important
+}
+
 .settings-nav {
   position: relative;
   overflow: hidden;
 }
 
 #settings-title-nav {
-  background-color: #393F44;
-  color: #ffffff;
+  background-color: @color-pf-black-800;
+  color: @color-pf-black-100;
   padding: 20px 15px 15px 25px;
 }
-
 
 .settings-title-nav-text {
   margin: 0;
@@ -16,9 +24,9 @@
 }
 
 #settings-options-nav {
-  height: 25px;
-  background-color: #f5f5f5;
-  border-bottom: 1px solid #d1d1d1;
+  padding: 10px 0px 0px 0px;
+  background-color: @color-pf-black-150;
+  border-bottom: 1px solid @color-pf-black-300 ;
 }
 
 #settings-options-nav ul {
@@ -29,4 +37,9 @@
 #settings-options-nav li {
   padding-right: 10px;
   display: inline-block;
+}
+
+#settings-options-nav a {
+  text-decoration: none;
+  color: black;
 }
