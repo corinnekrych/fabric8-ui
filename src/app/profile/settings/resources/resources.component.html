@@ -1,0 +1,50 @@
+<div class="container-fluid container-cards-pf">
+  <div class="col-xs-6">
+    <div class="row resource-header-colour list-group-item">
+      <div>
+        <div class="col-sm-6">
+          <b>Projects</b>
+        </div>
+        <div class="col-sm-2">
+          <div class="resources-center-text resources-remove-margin">
+            <b>CPU</b> (Cores)
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="resources-center-text resources-remove-margin">
+            <b>Memory</b> (GB)
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let proj of projectNames">
+      <div class="row">
+        <div class="list-group-item">
+          <div class="list-view-pf-main-info">
+            <div class="col-sm-6">
+              <span class="fa fa-angle-right resource-arrow resource-description list-view-pf-checkbox"></span>
+              <resource-status-icon class="resource-description" [iconClass]="projectInfo[proj].icon"></resource-status-icon>
+              <p class="resource-description resources-remove-margin">{{ proj }}</p>
+            </div>
+            <div class="col-sm-2" [class.resources-full-capacity]="projectInfo[proj].cpu.used == this.projectInfo[proj].cpu.quota">
+              <div class="resources-center-text resources-remove-margin" *ngIf="projectInfo[proj]; else loadingMsg">
+                <b>{{ projectInfo[proj].cpu.used }}|{{ this.projectInfo[proj].cpu.quota }}</b> used
+              </div>
+            </div>
+            <div class="col-sm-2" [class.resources-full-capacity]="projectInfo[proj].mem.used == this.projectInfo[proj].mem.quota">
+              <div class="resources-center-text resources-remove-margin" *ngIf="projectInfo[proj]; else loadingMsg">
+                <b>{{ projectInfo[proj].mem.used }}|{{ projectInfo[proj].mem.quota }}</b> used
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-xs-6"></div>
+
+<!-- Loading message template -->
+<ng-template #loadingMsg>
+  <p>Loading...</p>
+</ng-template>
