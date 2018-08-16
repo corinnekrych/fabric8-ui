@@ -13,6 +13,7 @@ import { Subject } from 'rxjs';
 import { Observable } from 'rxjs/Observable';
 import { filter, map } from 'rxjs/operators';
 
+import { async } from '@angular/core/testing';
 import { ContextService } from '../../shared/context.service';
 import { SpaceNamespaceService } from '../../shared/runtime-console/space-namespace.service';
 import { SpaceTemplateService } from '../../shared/space-template.service';
@@ -327,7 +328,7 @@ describe('AddAppOverlayComponent', () => {
       });
     });
 
-    it('continue button should be disabled on navigation in progress', async() => {
+    fit('continue button should be disabled on navigation in progress', async(() => {
       const element: HTMLElement = fixture.debugElement.nativeElement;
       let btnElem = element.querySelector('.code-imports--step_toolbar > button');
       expect(btnElem.hasAttribute('disabled')).toBeTruthy();
@@ -341,9 +342,9 @@ describe('AddAppOverlayComponent', () => {
         expect(btnElem.hasAttribute('disabled')).toBeTruthy();
         expect(fixture.debugElement.nativeElement.querySelector('.btn-primary .pficon-in-progress').isPresent()).toBe(true);
       });
-    });
+    }));
 
-    it('continue button should be enable on navigation is not in progress', async() => {
+    fit('continue button should be enable on navigation is not in progress', async (() => {
       const element: HTMLElement = fixture.debugElement.nativeElement;
       let btnElem = element.querySelector('.code-imports--step_toolbar > button');
       expect(btnElem.hasAttribute('disabled')).toBeTruthy();
@@ -356,7 +357,7 @@ describe('AddAppOverlayComponent', () => {
       fixture.whenStable().then(() => {
         expect(btnElem.hasAttribute('disabled')).toBeFalsy();
       });
-    });
+    }));
   });
 
 });
