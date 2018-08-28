@@ -8,28 +8,18 @@ const ngtools = require('@ngtools/webpack');
 const branding = require('./branding');
 var path = require('path');
 var stringify = require('json-stringify');
-var fs = require('fs');
-
+const ngTools = require('@ngtools/webpack');
 /*
  * Webpack Plugins
  */
-const autoprefixer = require('autoprefixer');
-const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
+
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const DefinePlugin = require('webpack/lib/DefinePlugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
-// const ngcWebpack = require('ngc-webpack');
-const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-// const TsConfigPathsPlugin = require('awesome-typescript-loader');
 
 /*
  * Webpack Constants
@@ -57,20 +47,13 @@ module.exports = function (options) {
     filename: '_assets/stylesheets/[name].[id]' + ( isProd ? '.[contenthash]' : '' ) + '.css'
   });
 
-  // const entryFile = aotMode ? './src/main.browser.aot.ts' : './src/main.browser.ts';
-  // const outPath = aotMode ? 'dist' : 'aot';
-  // const devtool = aotMode ? 'source-map' : 'eval-source-map';
-  // const srcPath = path.join(__dirname, 'demo', 'src');
-  var config = {
+  const entry = {
+    vendor: './src/vendor.browser.ts',
+      polyfills: './src/polyfills.browser.ts',
+      main: './src/main.browser.ts'
+  };
 
-    /*
-     * Cache generated modules and chunks to improve performance for multiple incremental builds.
-     * This is enabled by default in watch mode.
-     * You can pass false to disable it.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#cache
-     */
-    //cache: false,
+  var config = {
 
     /*
      * The entry point for the bundle
@@ -78,12 +61,7 @@ module.exports = function (options) {
      *
      * See: https://webpack.js.org/configuration/entry-context/#entry
      */
-    entry: {
-      'vendor': './src/vendor.browser.ts',
-      'polyfills': './src/polyfills.browser.ts',
-      // 'main': aotMode ? './src/main.browser.aot.ts' : './src/main.browser.ts'
-      'main': './src/main.browser.ts'
-    },
+    entry: entry,
 
     /*
      * Options affecting the resolving of modules.
@@ -110,24 +88,9 @@ module.exports = function (options) {
 
       rules: [
 
-        /*
-         * Typescript loader support for .ts and Angular 2 async routes via .async.ts
-         * Replace templateUrl and stylesUrl with require()
-         *
-         * See: https://github.com/s-panferov/awesome-typescript-loader
-         * See: https://github.com/TheLarkInn/angular2-template-loader
-         */
         {
-          test: /\.ts$/,
-          use: aotMode ? [
-            '@ngtools/webpack'
-          ] : [
-              '@angularclass/hmr-loader?pretty=' + !isProd + '&prod=' + isProd,
-              'awesome-typescript-loader',
-              'angular2-template-loader',
-              'angular2-router-loader'
-            ],
-          // loaders: '@ngtools/webpack',
+          test: /(?:\.ngfactory\.js|\.ngstyle\.js|\.ts)$/,
+          loader: '@ngtools/webpack',
           exclude: [/\.(spec|e2e)\.ts$/]
         },
 
@@ -143,10 +106,7 @@ module.exports = function (options) {
           loader: 'tslint-loader',
           exclude: [
             /node_modules/,
-            /src\/a-runtime-console/,
-            // /src\/main.browser.ts/,
-            // /src\/polyfills.browser.ts/,
-            // /src\/vendor.browser.ts/
+            /src\/a-runtime-console/
           ],
           options: {
           //   configuration: {
@@ -257,8 +217,8 @@ module.exports = function (options) {
                 options: {
                   sourceMap: true,
                   context: '/'
-                },
-              },
+                }
+              }
             ]
           })
         },
@@ -275,7 +235,7 @@ module.exports = function (options) {
                 context: '/'
               }
             }
-          ],
+          ]
         },
         {
           test: /^(?!.*component).*\.less$/,
@@ -327,7 +287,7 @@ module.exports = function (options) {
                 sourceMap: true
               }
             }
-          ],
+          ]
         },
 
         /**
@@ -370,53 +330,29 @@ module.exports = function (options) {
      * See: http://webpack.github.io/docs/configuration.html#plugins
      */
     plugins: [
-      /*
-       * Plugin: ForkCheckerPlugin
-       * Description: Do type checking in a separate process, so webpack don't need to wait.
-       *
-       * See: https://github.com/s-panferov/awesome-typescript-loader#forkchecker-boolean-defaultfalse
-       */
-      new CheckerPlugin(),
-
-      /*
-       * Plugin: CommonsChunkPlugin
-       * Description: Shares common code between the pages.
-       * It identifies common modules and put them into a commons chunk.
-       *
-       * See: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
-       * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
-       */
-      new CommonsChunkPlugin({
-        name: 'polyfills',
-        minChunks: Infinity,
+      new ngTools.AngularCompilerPlugin({
+        mainPath: entry.main,
+        tsConfigPath: 'tsconfig.json',
+        sourceMap: true,
+        skipCodeGeneration: true
       }),
-      new CommonsChunkPlugin({
-        name: 'vendor',
-        async: true,
-        minChunks: Infinity,
-      }),
-      new CommonsChunkPlugin({
-        name: 'main',
-        async: true,
-        minChunks: 2,
-      }),
-      new CommonsChunkPlugin({
-        name: 'manifest',
-        minChunks: Infinity,
-      }),
-
-      /*
-       * Plugin: ContextReplacementPlugin
-       * Description: Provides context to Angular's use of System.import
-       *
-       * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
-       * See: https://github.com/angular/angular/issues/11580
-       */
-      new ContextReplacementPlugin(
-        // The (\\|\/) piece accounts for path separators in *nix and Windows
-        /(.+)?angular(\\|\/)core(.+)?/,
-        path.resolve(__dirname, 'src') // location of your src
-      ),
+      new UglifyJsPlugin({
+        sourceMap: false,
+        parallel: true,
+        uglifyOptions: {
+          ecma: 5,
+          warnings: false,
+          ie8: false,
+          mangle: true,
+          compress: {
+            pure_getters: true,
+            passes: 3
+          },
+          output: {
+            ascii_only: true,
+            comments: false
+          }
+        }}),
 
       /*
        * Plugin: CopyWebpackPlugin
@@ -461,7 +397,10 @@ module.exports = function (options) {
        * See: https://github.com/numical/script-ext-html-webpack-plugin
        */
       new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'defer'
+        sync: /inline|polyfills|vendor/,
+        defaultAttribute: 'async',
+        preload: [/polyfills|vendor|main/],
+        prefetch: [/chunk/]
       }),
 
       /*
@@ -486,7 +425,7 @@ module.exports = function (options) {
         lintDirtyModulesOnly: false,
         failOnError: false,
         emitErrors: true,
-        quiet: false,
+        quiet: false
       })
     ],
 

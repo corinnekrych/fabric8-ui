@@ -19,7 +19,7 @@ const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ngtools = require('@ngtools/webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const OfflinePlugin = require('offline-plugin');
@@ -171,6 +171,24 @@ module.exports = function (env) {
           to: 'config'
         }
       ]),
+      new UglifyJsPlugin({
+        sourceMap: false,
+        parallel: true,
+        uglifyOptions: {
+          ecma: 5,
+          warnings: false,
+          ie8: false,
+          mangle: true,
+          compress: {
+            pure_getters: true,
+            passes: 3
+          },
+          output: {
+            ascii_only: true,
+            comments: false
+          }
+        }}),
+
 
       /**
        * Plugin: @ngtools/webpack
