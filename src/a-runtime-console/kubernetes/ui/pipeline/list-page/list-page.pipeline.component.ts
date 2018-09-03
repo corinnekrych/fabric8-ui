@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 import { BuildConfigs, combineBuildConfigAndBuilds, filterPipelines } from '../../../model/buildconfig.model';
 import { APIsStore } from '../../../store/apis.store';
 import { BuildStore } from '../../../store/build.store';

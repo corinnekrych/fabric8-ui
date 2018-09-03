@@ -8,7 +8,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { Context, Contexts, Space, SpaceService } from 'ngx-fabric8-wit';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
 import { Action } from 'patternfly-ng/action';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { ExtProfile, GettingStartedService } from '../../getting-started/services/getting-started.service';
 import { spaceMock } from '../../shared/context.service.mock';

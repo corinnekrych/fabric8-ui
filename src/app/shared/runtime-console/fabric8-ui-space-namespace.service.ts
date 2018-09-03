@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Spaces } from 'ngx-fabric8-wit';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs-compat';
 
 import { SpaceNamespace } from '../../../a-runtime-console/index';
 import { Fabric8RuntimeConsoleService } from './fabric8-runtime-console.service';

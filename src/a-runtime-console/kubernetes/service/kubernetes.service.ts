@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { Restangular } from 'ngx-restangular';
 

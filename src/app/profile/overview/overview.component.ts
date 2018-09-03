@@ -5,7 +5,7 @@ import { Broadcaster, Notification, Notifications, NotificationType } from 'ngx-
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { Space, SpaceService } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { ContextService } from '../../shared/context.service';
 

@@ -9,7 +9,7 @@ import { By } from '@angular/platform-browser';
 import {
   Observable,
   Subject
-} from 'rxjs';
+} from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import {
   initContext,

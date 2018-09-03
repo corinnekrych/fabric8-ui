@@ -1,6 +1,6 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, TestBed } from '@angular/core/testing';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { Logger } from 'ngx-base';
 import { WIT_API_URL } from 'ngx-fabric8-wit';

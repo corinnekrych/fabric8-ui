@@ -7,7 +7,7 @@ import { CollaboratorService, Context } from 'ngx-fabric8-wit';
 import { User } from 'ngx-login-client';
 import { EmptyStateConfig } from 'patternfly-ng/empty-state';
 import { ListConfig } from 'patternfly-ng/list';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { ContextService } from '../../../shared/context.service';
 import { AddCollaboratorsDialogComponent } from './add-collaborators-dialog/add-collaborators-dialog.component';

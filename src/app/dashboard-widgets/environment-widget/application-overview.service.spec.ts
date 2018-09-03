@@ -6,7 +6,7 @@ import {
 
 import { createMock } from 'testing/mock';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { DeploymentApiService } from '../../space/create/deployments/services/deployment-api.service';
 import {

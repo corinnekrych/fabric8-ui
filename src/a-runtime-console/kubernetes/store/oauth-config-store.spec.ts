@@ -20,7 +20,7 @@ import {
   Observable,
   ReplaySubject,
   Subscription
-} from 'rxjs';
+} from 'rxjs-compat';
 
 
 import { createMock } from 'src/app/testing/mock';

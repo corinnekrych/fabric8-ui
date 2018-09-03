@@ -9,8 +9,8 @@ import { FilterService, WorkItem, WorkItemService } from 'fabric8-planner';
 import { Broadcaster } from 'ngx-base';
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';
-import { ConnectableObservable } from 'rxjs';
-import { Observable, Subject } from 'rxjs';
+import { ConnectableObservable } from 'rxjs-compat';
+import { Observable, Subject } from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import { MockFeatureToggleComponent } from 'testing/mock-feature-toggle.component';
 import {

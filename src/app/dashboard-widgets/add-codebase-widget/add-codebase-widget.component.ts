@@ -8,7 +8,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { Broadcaster } from 'ngx-base';
 import {

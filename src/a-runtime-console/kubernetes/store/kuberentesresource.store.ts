@@ -1,5 +1,5 @@
 import { plural } from 'pluralize';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs-compat';
 import { AbstractStore } from '../../store/entity/entity.store';
 import { KubernetesResource } from '../model/kubernetesresource.model';
 import { KubernetesService } from '../service/kubernetes.service';

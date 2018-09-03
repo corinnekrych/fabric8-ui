@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 @Component({
   encapsulation: ViewEncapsulation.None,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 import { enrichServiceWithRoute, Services } from '../model/service.model';
 import { RouteStore } from './route.store';
 import { ServiceStore } from './service.store';

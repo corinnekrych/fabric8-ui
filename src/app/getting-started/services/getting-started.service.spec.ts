@@ -4,7 +4,7 @@ import {
   TestRequest
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { createMock } from 'testing/mock';
 

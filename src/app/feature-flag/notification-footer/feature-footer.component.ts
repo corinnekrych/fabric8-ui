@@ -5,8 +5,7 @@ import {
 } from '@angular/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip/tooltip.directive';
 import { FeatureFlagConfig } from 'ngx-feature-flag';
-import { Subscription } from 'rxjs';
-import 'rxjs/operators/map';
+import { Subscription } from 'rxjs-compat';
 
 @Component({
   encapsulation: ViewEncapsulation.None,

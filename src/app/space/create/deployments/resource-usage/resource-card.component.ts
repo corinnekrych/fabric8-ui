@@ -4,7 +4,7 @@ import {
   OnInit
 } from '@angular/core';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { MemoryStat } from '../models/memory-stat';
 import { DeploymentStatusService } from '../services/deployment-status.service';

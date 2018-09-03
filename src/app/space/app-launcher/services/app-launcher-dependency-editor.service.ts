@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { Headers, Http, RequestOptions, Response } from '@angular/http';
 

@@ -5,7 +5,7 @@ import {
 import { TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import {
   initContext,

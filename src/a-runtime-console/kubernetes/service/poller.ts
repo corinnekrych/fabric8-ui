@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs-compat';
 import { Operation, ResourceOperation } from './resource-operation';
 
 

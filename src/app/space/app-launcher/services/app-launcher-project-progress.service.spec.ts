@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import {
   Subject
-} from 'rxjs';
+} from 'rxjs-compat';
 
 import {
   Config,

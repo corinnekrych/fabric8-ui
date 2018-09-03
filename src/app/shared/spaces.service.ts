@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { Broadcaster } from 'ngx-base';
 import { Contexts, Space, Spaces, SpaceService } from 'ngx-fabric8-wit';
-import { Observable, Subject } from 'rxjs';
-import { ConnectableObservable } from 'rxjs/observable/ConnectableObservable';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Observable, Subject } from 'rxjs-compat';
+import { ConnectableObservable } from 'rxjs-compat';
+import { ReplaySubject } from 'rxjs-compat';
 
 import { ExtProfile, ProfileService } from '../profile/profile.service';
 

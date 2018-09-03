@@ -7,8 +7,8 @@ import {
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
-import { BehaviorSubject, Observable } from 'rxjs';
-import { ConnectableObservable, Subject } from 'rxjs/Rx';
+import { BehaviorSubject, Observable } from 'rxjs-compat';
+import { ConnectableObservable, Subject } from 'rxjs-compat';
 
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';

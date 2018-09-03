@@ -7,7 +7,7 @@ import {
 } from '@angular/http';
 
 import * as _ from 'lodash';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import {
   HelperService,

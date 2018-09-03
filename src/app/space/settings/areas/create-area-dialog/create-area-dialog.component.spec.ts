@@ -1,7 +1,7 @@
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { Area, AreaService } from 'ngx-fabric8-wit';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 import { initContext, TestContext } from 'testing/test-context';
 import { AreaCreationStatus, CreateAreaDialogComponent } from './create-area-dialog.component';
 

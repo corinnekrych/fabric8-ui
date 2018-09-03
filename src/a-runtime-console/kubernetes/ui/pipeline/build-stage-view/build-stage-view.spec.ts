@@ -8,7 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MomentModule } from 'angular2-moment';
 import { StackDetailsModule } from 'fabric8-stack-analysis-ui';
 import { ModalModule } from 'ngx-modal';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { AUTH_API_URL, AuthenticationService } from 'ngx-login-client';
 import { JenkinsService } from '../../../../../app/app/shared/jenkins.service';

@@ -10,7 +10,7 @@ import { NotificationType } from 'ngx-base';
 import {
   Observable,
   Subscription
-} from 'rxjs';
+} from 'rxjs-compat';
 
 import { PodPhase } from '../models/pod-phase';
 

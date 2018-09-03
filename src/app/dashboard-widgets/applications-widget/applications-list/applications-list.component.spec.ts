@@ -4,7 +4,7 @@ import {
   Input
 } from '@angular/core';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs-compat';
 
 import { initContext, TestContext } from 'testing/test-context';
 

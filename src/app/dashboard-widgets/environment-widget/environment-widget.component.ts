@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs-compat';
 
 import { Contexts, Spaces } from 'ngx-fabric8-wit';
 

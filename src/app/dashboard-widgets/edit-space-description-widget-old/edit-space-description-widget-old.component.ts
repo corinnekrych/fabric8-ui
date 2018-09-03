@@ -2,7 +2,7 @@ import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular
 import { Broadcaster } from 'ngx-base';
 import { Contexts, Space, Spaces, SpaceService } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs-compat';
 import { SpaceNamespaceService } from '../../shared/runtime-console/space-namespace.service';
 
 @Component({

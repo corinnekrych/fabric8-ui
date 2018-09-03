@@ -8,7 +8,7 @@ import { Notifications } from 'ngx-base/src/app/notifications/notifications';
 import { Contexts } from 'ngx-fabric8-wit';
 import { SpaceService } from 'ngx-fabric8-wit';
 import { UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { ContextService } from '../../shared/context.service';
 import { OverviewComponent } from './overview.component';

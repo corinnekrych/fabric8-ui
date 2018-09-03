@@ -1,5 +1,5 @@
 import { OnDestroy } from '@angular/core';
-import { Observable, Subject, Subscriber, Subscription } from 'rxjs';
+import { Observable, Subject, Subscriber, Subscription } from 'rxjs-compat';
 import { Deployment, Deployments } from '../model/deployment.model';
 import { DeploymentConfig } from '../model/deploymentconfig.model';
 import { KubernetesResource } from '../model/kubernetesresource.model';

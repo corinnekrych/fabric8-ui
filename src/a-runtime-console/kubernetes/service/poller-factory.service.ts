@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs-compat';
+import { Observable } from 'rxjs-compat';
 import { Poller } from './poller';
 
 @Injectable()

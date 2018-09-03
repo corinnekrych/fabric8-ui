@@ -11,7 +11,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { Context, Contexts, Space } from 'ngx-fabric8-wit';
 import { Feature, FeatureTogglesService } from 'ngx-feature-flag';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import { MockFeatureToggleComponent } from 'testing/mock-feature-toggle.component';
 import {

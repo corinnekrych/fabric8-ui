@@ -7,7 +7,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Broadcaster } from 'ngx-base';
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import {
   initContext,

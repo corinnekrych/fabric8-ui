@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpModule, Response, ResponseOptions, XHRBackend } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { Context } from 'ngx-fabric8-wit';
 import {

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Contexts } from 'ngx-fabric8-wit';
 import { AuthenticationService } from 'ngx-login-client';
 import { UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { initContext, TestContext } from '../../../../testing/test-context';
 import { ProviderService } from '../../../shared/account/provider.service';

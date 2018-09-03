@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs-compat';
 
 import {
   Build,

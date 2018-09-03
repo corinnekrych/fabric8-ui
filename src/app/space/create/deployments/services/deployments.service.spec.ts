@@ -14,7 +14,7 @@ import {
   Subject,
   VirtualTimeScheduler
 } from 'rxjs';
-import { VirtualAction } from 'rxjs/scheduler/VirtualTimeScheduler';
+import { VirtualAction } from 'rxjs-compat';
 
 import {
   Logger,

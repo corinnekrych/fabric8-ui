@@ -6,7 +6,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs-compat';
 
 import { Contexts } from 'ngx-fabric8-wit';
 

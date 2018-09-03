@@ -5,7 +5,7 @@ import { uniqBy } from 'lodash';
 import { FilterService, WorkItem, WorkItemService } from 'fabric8-planner';
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { Space, Spaces, SpaceService } from 'ngx-fabric8-wit';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 import { ContextService } from '../../../shared/context.service';
 
 import { filterOutClosedItems } from '../../../shared/workitem-utils';

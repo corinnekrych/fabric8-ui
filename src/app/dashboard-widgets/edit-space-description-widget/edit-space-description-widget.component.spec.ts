@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { Broadcaster } from 'ngx-base';
 import { CollaboratorService, Contexts, Space, Spaces, SpaceService } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';
-import { ConnectableObservable, Observable } from 'rxjs';
+import { ConnectableObservable, Observable } from 'rxjs-compat';
 import { createMock } from 'testing/mock';
 import { initContext, TestContext } from 'testing/test-context';
 import { SpaceNamespaceService } from '../../shared/runtime-console/space-namespace.service';

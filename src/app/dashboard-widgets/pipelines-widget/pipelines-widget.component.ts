@@ -12,7 +12,7 @@ import { User, UserService } from 'ngx-login-client';
 
 import {
   Subscription
-} from 'rxjs/Rx';
+} from 'rxjs-compat';
 
 import { Broadcaster } from 'ngx-base';
 import { Context, Contexts } from 'ngx-fabric8-wit';

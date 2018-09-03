@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 import { combineReplicaSet, combineReplicaSets, ReplicaSet, ReplicaSets } from '../model/replicaset.model';
 import { ReplicaSetStore } from './replicaset.store';
 import { ReplicationControllerStore } from './replicationcontroller.store';

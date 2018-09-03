@@ -22,7 +22,7 @@ import {
 import { User } from 'ngx-login-client';
 import {
   Observable,
-} from 'rxjs';
+} from 'rxjs-compat';
 
 import { ContextService } from '../../../shared/context.service';
 import { CollaboratorsComponent } from './collaborators.component';

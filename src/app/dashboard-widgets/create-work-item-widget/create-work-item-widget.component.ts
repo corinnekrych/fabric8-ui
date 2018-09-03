@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { ConnectableObservable, Observable } from 'rxjs';
+import { ConnectableObservable, Observable } from 'rxjs-compat';
 
 import { FilterService, WorkItem, WorkItemService } from 'fabric8-planner';
 import { Contexts } from 'ngx-fabric8-wit';

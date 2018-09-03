@@ -8,7 +8,7 @@ import { Logger } from 'ngx-base/src/app/logger.service';
 import { Notifications } from 'ngx-base/src/app/notifications/notifications';
 import { Contexts, WIT_API_URL } from 'ngx-fabric8-wit';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { GettingStartedService } from '../../getting-started/services/getting-started.service';
 import { ProviderService } from '../../shared/account/provider.service';

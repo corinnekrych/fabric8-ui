@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Broadcaster } from 'ngx-base';
 import { Context, Contexts, Space } from 'ngx-fabric8-wit';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { Feature, FeatureTogglesService } from 'ngx-feature-flag';
 

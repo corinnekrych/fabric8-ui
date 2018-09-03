@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { ResourceService, UsageSeverityEnvironmentStat } from '../services/resource.service';
 

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs-compat';
 import { BuildConfigs } from '../../../a-runtime-console/index';
 import { ContextService } from '../../shared/context.service';
 import { PipelinesService } from '../../space/create/pipelines/services/pipelines.service';

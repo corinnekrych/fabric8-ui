@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Logger } from 'ngx-base';
 import { Contexts, SpaceService, WIT_API_URL } from 'ngx-fabric8-wit';
 import { AuthenticationService, UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { EventService } from '../../shared/event.service';
 import { TenantService } from '../services/tenant.service';

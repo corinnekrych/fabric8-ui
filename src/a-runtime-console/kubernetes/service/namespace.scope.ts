@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 export interface INamespaceScope {
   namespace: Observable<string>;

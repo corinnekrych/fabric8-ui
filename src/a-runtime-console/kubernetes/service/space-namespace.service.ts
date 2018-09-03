@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { merge } from 'lodash';
-import { BehaviorSubject } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs-compat';
+import { Observable } from 'rxjs-compat';
 import { findParameter } from '../model/helpers';
 import { SpaceNamespace } from '../model/space-namespace';
 

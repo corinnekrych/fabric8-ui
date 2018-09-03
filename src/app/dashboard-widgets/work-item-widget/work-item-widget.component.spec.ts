@@ -8,7 +8,7 @@ import { WorkItem, WorkItemService } from 'fabric8-planner';
 import { cloneDeep } from 'lodash';
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { Feature, FeatureTogglesService } from 'ngx-feature-flag';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs-compat';
 
 import { createMock } from 'testing/mock';
 import { MockFeatureToggleComponent } from 'testing/mock-feature-toggle.component';

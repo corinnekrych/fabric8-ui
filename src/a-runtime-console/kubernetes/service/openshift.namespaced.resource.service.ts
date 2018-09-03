@@ -1,5 +1,5 @@
 import { Restangular } from 'ngx-restangular';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs-compat';
 import { KubernetesResource } from '../model/kubernetesresource.model';
 import { isOpenShift } from '../store/apis.store';
 import { NamespaceScope } from './namespace.scope';

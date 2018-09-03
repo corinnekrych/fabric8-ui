@@ -1,5 +1,5 @@
 import { Restangular } from 'ngx-restangular';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { BaseEntity } from './entity.model';
 

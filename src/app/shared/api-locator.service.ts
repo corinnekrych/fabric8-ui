@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Fabric8UIConfig } from './config/fabric8-ui-config';
+import { environment } from '../../environments/environment';
 
 const DEFAULT_API_ENV_VAR_NAMES = new Map<string, string>(
   [
@@ -42,43 +43,43 @@ export class BaseApiLocatorService {
   }
 
   get realm(): string {
-    return this.envVars.get('realm') || 'fabric8';
+    return environment.FABRIC8_REALM; //this.envVars.get('realm') || 'fabric8';
   }
 
   get branding(): string {
-    return this.envVars.get('branding') || 'openshiftio';
+    return 'openshiftio'; //this.envVars.get('branding') || 'openshiftio';
   }
 
   get witApiUrl(): string {
-    return this.config.witApiUrl || this.buildApiUrl('wit');
+    return environment.FABRIC8_WIT_API_URL;//this.config.witApiUrl || this.buildApiUrl('wit');
   }
 
   get forgeApiUrl(): string {
-    return this.config.forgeApiUrl || this.buildApiUrl('forge');
+    return environment.FABRIC8_FORGE_API_URL;//this.config.forgeApiUrl || this.buildApiUrl('forge');
   }
 
   get ssoApiUrl(): string {
-    return this.config.ssoApiUrl || this.buildApiUrl('sso');
+    return environment.FABRIC8_SSO_API_URL; //this.config.ssoApiUrl || this.buildApiUrl('sso');
   }
 
   get authApiUrl(): string {
-    return this.config.authApiUrl || this.buildApiUrl('auth');
+    return environment.FABRIC8_AUTH_API_URL; // this.config.authApiUrl || this.buildApiUrl('auth');
   }
 
   get recommenderApiUrl(): string {
-    return this.config.recommenderApiUrl || this.buildApiUrl('recommender');
+    return environment.FABRIC8_RECOMMENDER_API_URL; //this.config.recommenderApiUrl || this.buildApiUrl('recommender');
   }
 
   get analyticsRecommenderApiUrl(): string {
-    return this.config.analyticsRecommenderUrl || this.buildApiUrl('analyticsRecommender');
+    return environment.FABRIC8_RECOMMENDER_API_URL; //this.config.analyticsRecommenderUrl || this.buildApiUrl('analyticsRecommender');
   }
 
   get analyticsLicenseApiUrl(): string {
-    return this.config.analyticsLicenseUrl || this.buildApiUrl('analyticsLicense');
+    return environment.ANALYTICS_LICENSE_URL; //this.config.analyticsLicenseUrl || this.buildApiUrl('analyticsLicense');
   }
 
   get jenkinsApiUrl(): string {
-    return this.config.jenkinsApiUrl || this.buildApiUrl('jenkins');
+    return environment.FABRIC8_JENKINS_API_URL; //this.config.jenkinsApiUrl || this.buildApiUrl('jenkins');
   }
 
   protected loadEnvVar(key: string): void {

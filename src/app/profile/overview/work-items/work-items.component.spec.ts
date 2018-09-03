@@ -2,7 +2,7 @@ import { Component, DebugElement, NO_ERRORS_SCHEMA, Pipe, PipeTransform } from '
 import { By } from '@angular/platform-browser';
 
 import { List, take } from 'lodash';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { FilterService, WorkItemService } from 'fabric8-planner';
 

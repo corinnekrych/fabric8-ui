@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 import { Area, AreaService, Context } from 'ngx-fabric8-wit';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { Action, ActionConfig } from 'patternfly-ng/action';
 import { EmptyStateConfig } from 'patternfly-ng/empty-state';

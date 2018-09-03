@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FilterService, WorkItem, WorkItemService } from 'fabric8-planner';
 import { Space, Spaces } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { filterOutClosedItems } from '../../shared/workitem-utils';
 

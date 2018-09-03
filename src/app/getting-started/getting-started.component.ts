@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 import { ProviderService } from '../shared/account/provider.service';
 
 @Component({

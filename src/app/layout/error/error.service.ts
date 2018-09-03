@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject, Subject } from 'rxjs-compat';
+import { Observable } from 'rxjs-compat';
 
 @Injectable()
 export class ErrorService {

@@ -9,7 +9,7 @@ import { Context, ProcessTemplate, Space, SpaceService } from 'ngx-fabric8-wit';
 import { DependencyCheckService } from 'ngx-launcher';
 import { Profile, User, UserService } from 'ngx-login-client';
 import { Subject } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 import { ContextService } from '../../shared/context.service';

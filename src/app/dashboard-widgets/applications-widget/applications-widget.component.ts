@@ -8,7 +8,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs-compat';
 
 import { Context, Contexts, Space } from 'ngx-fabric8-wit';
 import { User, UserService } from 'ngx-login-client';

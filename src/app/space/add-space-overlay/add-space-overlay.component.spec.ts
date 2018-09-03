@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { Broadcaster, Logger, Notification, Notifications, NotificationType } from 'ngx-base';
 import { ProcessTemplate, Space, SpaceService } from 'ngx-fabric8-wit';
 import { Profile, User, UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 import { ContextService } from '../../shared/context.service';
 import { SpaceNamespaceService } from '../../shared/runtime-console/space-namespace.service';

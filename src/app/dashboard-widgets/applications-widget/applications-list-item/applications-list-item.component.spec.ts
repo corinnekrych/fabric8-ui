@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { Context, Contexts } from 'ngx-fabric8-wit';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs-compat';
 import { initContext, TestContext } from 'testing/test-context';
 
 import { Build } from '../../../../../a-runtime-console/index';

@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnDestroy, ViewChild } from '@angular/core';
 import { Headers, Http, RequestOptions } from '@angular/http';
 import { AuthenticationService } from 'ngx-login-client';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs-compat';
 
 import { JenkinsService } from '../../../../../app/shared/jenkins.service';
 import { FABRIC8_FORGE_API_URL } from '../../../../../app/shared/runtime-console/fabric8-ui-forge-api';

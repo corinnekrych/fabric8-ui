@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs-compat';
 
 import { $WebSocket } from 'angular2-websocket/angular2-websocket';
 import { OnLogin } from '../../shared/onlogin.service';

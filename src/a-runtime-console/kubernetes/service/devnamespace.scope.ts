@@ -3,8 +3,8 @@ import { Headers, Http } from '@angular/http';
 import { Logger } from 'ngx-base';
 import { WIT_API_URL } from 'ngx-fabric8-wit';
 import { AuthenticationService } from 'ngx-login-client';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs-compat';
+import { BehaviorSubject } from 'rxjs-compat';
 import { pathJoin } from '../model/utils';
 import { INamespaceScope } from './namespace.scope';
 

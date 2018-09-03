@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 import { Context } from 'ngx-fabric8-wit';
 import { DependencyCheck, DependencyCheckService } from 'ngx-launcher';

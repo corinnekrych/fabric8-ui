@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Context, Contexts } from 'ngx-fabric8-wit';
 import { AuthenticationService } from 'ngx-login-client';
 import { UserService } from 'ngx-login-client';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs-compat';
 
 import { ProviderService } from '../../../shared/account/provider.service';
 

@@ -10,7 +10,7 @@ import {
 import { Notification, Notifications, NotificationType } from 'ngx-base';
 import { Contexts } from 'ngx-fabric8-wit';
 import { UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 
 @Injectable()
 export class ContextCurrentUserGuard implements Resolve<any> {

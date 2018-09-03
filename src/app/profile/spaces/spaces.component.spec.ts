@@ -7,8 +7,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { Contexts, Fabric8WitModule, Space, SpaceService } from 'ngx-fabric8-wit';
 import { FeatureTogglesService } from 'ngx-feature-flag';
 import { AuthenticationService } from 'ngx-login-client';
-import { Subject } from 'rxjs';
-import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs-compat';
+import { Observable } from 'rxjs-compat';
 
 import { EventService } from '../../shared/event.service';
 import { SpacesComponent } from './spaces.component';

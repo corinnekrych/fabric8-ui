@@ -6,8 +6,8 @@ import {
 } from '@angular/core';
 
 import { AuthenticationService, User, UserService } from 'ngx-login-client';
-import 'rxjs/operators/map';
-import { Subscription } from 'rxjs/Subscription';
+
+import { Subscription } from 'rxjs-compat';
 
 import { ErrorService } from './error.service';
 

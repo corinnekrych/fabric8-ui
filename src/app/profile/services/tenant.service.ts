@@ -4,7 +4,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Logger } from 'ngx-base';
 import { WIT_API_URL } from 'ngx-fabric8-wit';
 import { AuthenticationService } from 'ngx-login-client';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 
 @Injectable()
 export class TenantService {

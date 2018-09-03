@@ -9,7 +9,7 @@ import { TooltipConfig, TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { Notifications } from 'ngx-base';
 import { Spaces, SpaceService } from 'ngx-fabric8-wit';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 import { ContextService } from '../../shared/context.service';
 import { spaceMock } from '../../shared/context.service.mock';
 

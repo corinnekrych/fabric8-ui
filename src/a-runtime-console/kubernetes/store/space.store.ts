@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import 'rxjs/add/observable/forkJoin';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs-compat';
 import { OnLogin } from '../../shared/onlogin.service';
 import { ConfigMap, ConfigMaps } from '../model/configmap.model';
 import { isSecretsNamespace, isSystemNamespace, Namespace, Namespaces } from '../model/namespace.model';

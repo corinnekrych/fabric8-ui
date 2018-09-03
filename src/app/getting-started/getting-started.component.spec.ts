@@ -2,7 +2,7 @@ import { DebugNode } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationService, UserService } from 'ngx-login-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs-compat';
 import { ProviderService } from '../shared/account/provider.service';
 import { GettingStartedComponent } from './getting-started.component';
 

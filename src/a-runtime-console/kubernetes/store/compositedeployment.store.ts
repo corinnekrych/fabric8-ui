@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs-compat';
 import { Deployment, Deployments } from '../model/deployment.model';
 import { combineDeployment, combineDeployments } from '../view/deployment.view';
 import { APIsStore } from './apis.store';

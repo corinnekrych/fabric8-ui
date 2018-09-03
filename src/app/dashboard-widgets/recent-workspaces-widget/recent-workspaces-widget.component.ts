@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable, Subscription } from 'rxjs/Rx';
+import { Observable, Subscription } from 'rxjs-compat';
 
 import { Notification, Notifications, NotificationType } from 'ngx-base';
 import { Space, Spaces } from 'ngx-fabric8-wit';

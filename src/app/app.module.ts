@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ApplicationRef, ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { Http, HttpModule } from '@angular/http';
@@ -25,7 +25,7 @@ import {
   SpaceService
 } from 'ngx-fabric8-wit';
 import {
-  AuthenticationService,
+  AuthenticationService, AuthInterceptor,
   UserService
 } from 'ngx-login-client';
 import { RestangularModule } from 'ngx-restangular';
@@ -191,6 +191,11 @@ export type StoreType = {
     AreaService,
     authApiUrlProvider,
     AuthenticationService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
     AuthGuard,
     AuthUserResolve,
     BrandingService,

@@ -1,5 +1,5 @@
 import { Restangular } from 'ngx-restangular';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs-compat';
 import { KubernetesResource } from '../model/kubernetesresource.model';
 import { pathJoin } from '../model/utils';
 import { KubernetesService } from './kubernetes.service';
